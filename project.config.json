@@ -1,0 +1,78 @@
+{
+  "description": "瞎掰大王 · 好友联机与单人试玩",
+  "compileType": "game",
+  "appid": "touristappid",
+  "projectname": "xiabai-dawang",
+  "setting": {
+    "es6": true,
+    "minified": true
+  },
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "file",
+        "value": "preview.html"
+      },
+      {
+        "type": "file",
+        "value": "README.md"
+      },
+      {
+        "type": "folder",
+        "value": "tests"
+      },
+      {
+        "type": "file",
+        "value": "package.json"
+      },
+      {
+        "type": "folder",
+        "value": "server"
+      },
+      {
+        "type": "folder",
+        "value": "deploy"
+      },
+      {
+        "type": "file",
+        "value": "Dockerfile"
+      },
+      {
+        "type": "file",
+        "value": ".dockerignore"
+      },
+      {
+        "type": "file",
+        "value": "src/browser.js"
+      },
+      {
+        "type": "file",
+        "value": "启动本机试玩.command"
+      },
+      {
+        "type": "file",
+        "value": "启动同WiFi联机.command"
+      },
+      {
+        "type": "folder",
+        "value": "data"
+      },
+      {
+        "type": "file",
+        "value": ".gitignore"
+      },
+      {
+        "type": "file",
+        "value": ".env"
+      },
+      {
+        "type": "folder",
+        "value": "scripts"
+      },
+      {
+        "type": "folder",
+        "value": ".git"
+      }
+    ]
+  }
+}

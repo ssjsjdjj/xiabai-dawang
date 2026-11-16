@@ -1,0 +1,13 @@
+.git
+node_modules
+*.zip
+tests
+deploy
+*.md
+*.command
+data
+.env
+.env.*
+*.log
+*.lock
+*.tmp

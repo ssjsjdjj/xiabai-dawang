@@ -1,0 +1,36 @@
+services:
+  game:
+    build: ..
+    restart: unless-stopped
+    init: true
+    read_only: true
+    environment:
+      HOST: 0.0.0.0
+      PORT: 8765
+      PLAYER_DATA_FILE: /app/data/players.json
+      WX_APPID: ${WX_APPID:-}
+      WX_APPSECRET: ${WX_APPSECRET:-}
+      REQUIRE_WECHAT_LOGIN: ${REQUIRE_WECHAT_LOGIN:-false}
+    volumes:
+      - game_data:/app/data
+    expose:
+      - "8765"
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      GAME_DOMAIN: ${GAME_DOMAIN:?请在.env中填写游戏域名}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      game:
+        condition: service_healthy
+volumes:
+  game_data:
+  caddy_data:
+  caddy_config:
